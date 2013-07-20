@@ -1,0 +1,16 @@
+{
+  "name": "pretty-stringify",
+  "version": "0.0.0",
+  "description": "JSON.stringify with more options",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": "",
+  "author": "Colin Wren",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "~1.12.0",
+    "lodash": "~1.3.1"
+  }
+}
