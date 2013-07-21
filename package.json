@@ -1,5 +1,5 @@
 {
-  "name": "pretty-stringify",
+  "name": "prettyStringify",
   "version": "0.0.0",
   "description": "A prettier JSON.stringify",
   "main": "index.js",
