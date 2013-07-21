@@ -18,7 +18,7 @@ module.exports = function (obj, options) {
   quoteWrap = wrap((options.quote === '"' || options.quote === 'double') ? '"' : '\'');
   createIndent = prefix(options.indent || '  ');
 
-  return createIndent(initialIndent) + processValue(obj, initialIndent);
+  return processValue(obj, initialIndent);
 };
 
 // Process value based on its type
