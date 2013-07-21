@@ -1,3 +1,5 @@
+'use strict';
+
 var _ = require('lodash');
 
 // Wrap string in single or double quotes based on user input
@@ -8,7 +10,7 @@ var createIndent;
 
 // Take an object or array and return stringified JSON that is styled based on
 // user input
-module.exports = function(obj, options) {
+module.exports = function (obj, options) {
   options = options || {};
   var initialIndent = options.initialIndent || 0;
 
@@ -17,7 +19,7 @@ module.exports = function(obj, options) {
   createIndent = prefix(options.indent || '  ');
 
   return createIndent(initialIndent) + processValue(obj, initialIndent);
-}
+};
 
 // Process value based on its type
 function processValue(value, nest) {
@@ -37,7 +39,7 @@ function processValue(value, nest) {
 
 // Stringify object
 function printObj(obj, nest) {
-  var buffer = _.map(obj, function(value, key) {
+  var buffer = _.map(obj, function (value, key) {
     return createIndent(nest + 1) + key + ': ' + processValue(value, nest + 1);
   });
 
@@ -46,7 +48,7 @@ function printObj(obj, nest) {
 
 // Stringify array
 function printArray(array, nest) {
-  var buffer = _.map(array, function(value) {
+  var buffer = _.map(array, function (value) {
     return createIndent(nest + 1) + processValue(value, nest + 1);
   });
 
@@ -54,13 +56,13 @@ function printArray(array, nest) {
 }
 
 function prefix(space) {
-  return function(nest) {
+  return function (nest) {
     return new Array(nest + 1).join(space);
-  }
+  };
 }
 
 function wrap(character) {
-  return function(str) {
+  return function (str) {
     return character + str + character;
-  }
+  };
 }
